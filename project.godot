@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Codon"
-run/main_scene="uid://c1w4n5ersmpjm"
+run/main_scene="uid://cyqdnwmu4vnk"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

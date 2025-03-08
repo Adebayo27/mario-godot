@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://c1w4n5ersmpjm"]
+[gd_scene load_steps=23 format=4 uid="uid://c1w4n5ersmpjm"]
 
 [ext_resource type="Script" uid="uid://bcuwcep0gxfqr" path="res://scripts/game_manager.gd" id="1_0tnpc"]
 [ext_resource type="PackedScene" uid="uid://drnhh1mdvvyna" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -9,11 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://do0633fsdmw2d" path="res://scenes/slime.tscn" id="6_p57ef"]
 [ext_resource type="FontFile" uid="uid://drgn76c71necg" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 [ext_resource type="FontFile" uid="uid://hapomdvb0y7w" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="8_gee14"]
+[ext_resource type="Script" uid="uid://dbgaf8xd80xp0" path="res://scripts/level_exit.gd" id="10_vtaks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
 texture = ExtResource("2_yqjtg")
 0:0/0 = 0
-1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -180,8 +180,6 @@ texture = ExtResource("2_yqjtg")
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
 4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-5:1/0 = 0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:1/0 = 0
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
@@ -385,6 +383,9 @@ _data = {
 &"move": SubResource("Animation_iywne")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvpfn"]
+size = Vector2(23, 25)
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -535,3 +536,10 @@ theme_override_font_sizes/font_size = 8
 text = "Great Job"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LevelExit" type="Area2D" parent="."]
+script = ExtResource("10_vtaks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelExit"]
+position = Vector2(326.5, -141.5)
+shape = SubResource("RectangleShape2D_kvpfn")

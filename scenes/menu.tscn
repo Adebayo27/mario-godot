@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyqdnwmu4vnk"]
+
+[ext_resource type="Texture2D" uid="uid://dv0uqowdi2cfu" path="res://assets/sprites/background.png" id="1_con2f"]
+[ext_resource type="Script" uid="uid://kweldubqj2tx" path="res://scripts/menu.gd" id="1_mhnvy"]
+[ext_resource type="Theme" uid="uid://1w3l4hguo3pv" path="res://assets/themes/button_theme.tres" id="1_vjb58"]
+[ext_resource type="FontFile" uid="uid://drgn76c71necg" path="res://assets/fonts/PixelOperator8.ttf" id="1_yqeox"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhnvy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_con2f")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = 43.0
+offset_right = -46.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_vjb58")
+theme_override_constants/h_separation = 8
+theme_override_fonts/font = ExtResource("1_yqeox")
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_vjb58")
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_vjb58")
+text = "Quit"
